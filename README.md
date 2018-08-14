@@ -16,6 +16,7 @@ CRUD операции над каталогом товаров, а также п
 
 При использовании нестандартных логина/пароля для доступа к БД необходимо в файле ***application.properties***
 изменить значения полей на актуальные:
+
 ***spring.datasource.username=root***
 ***spring.datasource.password=root***
 
@@ -30,7 +31,10 @@ localhost:8080/products?category=name name указывается с учёто�
 localhost:8080/products?title=text, где text - часть названия искомого товара с учётом регистра
 
 Проверить возможность добавления, редактирования и удаления записей в базе данных можно воспользовавшись средствами разработчика
-в браузере: Ctrl+Shift+I либо F12 в Google Chrome. Для этого во вкладке Console необходимо сформировать и отправить запрос сходный с одним из следующих: 
+в браузере: Ctrl+Shift+I либо F12 в Google Chrome. Для этого во вкладке Console необходимо сформировать и отправить запрос сходный с одним из следующих:
+ 
 fetch('/products', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yandex', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))
+
 fetch('/products/3', {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yahoo', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))
+
 fetch('/products/2', {method:'DELETE'}).then(result => console.log(result))
