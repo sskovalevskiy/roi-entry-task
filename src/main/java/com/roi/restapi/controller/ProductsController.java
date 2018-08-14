@@ -35,20 +35,17 @@ public class ProductsController {
         return productService.getProductById(Long.parseLong(id));
     }
 
-//    fetch('/products', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yandex', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))
     @PostMapping
     public boolean addProduct(@RequestBody Product product){
         return productService.addProduct(product);
     }
 
-//    fetch('/products/3', {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yahoo', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))
     @PutMapping("{id}")
     public void updateProduct(@PathVariable String id, @RequestBody Product product) {
         product.setProductId(Long.parseLong(id));
         productService.updateProduct(product);
     }
 
-//    fetch('/products/2', {method:'DELETE'}).then(result => console.log(result))
     @DeleteMapping("{id}")
     public void deleteProductById(@PathVariable String id){
         productService.deleteProductById(Long.parseLong(id));
