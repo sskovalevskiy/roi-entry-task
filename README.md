@@ -12,29 +12,29 @@ CRUD операции над каталогом товаров, а также п
 Результат: исходный код приложения с инструкциями по развертыванию (можно ссылку на GitHub)
 
 ### Инструкция по развертыванию
-Дамп базы данных для MySQL 5.7: roi-entry-task\src\main\resources\database.sql
+Дамп базы данных для MySQL 5.7: [roi-entry-task\src\main\resources\database.sql](roi-entry-task\src\main\resources\database.sql)
 
 При использовании нестандартных логина/пароля для доступа к БД необходимо в файле ***application.properties***
-изменить значения полей на актуальные:
+изменить значения полей ***spring.datasource.username=root***  ***spring.datasource.password=root*** на актуальные:
 
-***spring.datasource.username=root***
-***spring.datasource.password=root***
 
 ### Получение JSON от сервера
 Чтобы получить полный список всех продуктов необходимо в адресной строке браузера обратиться по адресу
-localhost:8080/products
+[localhost:8080/products](http://localhost:8080/products)
 
-Для получения списка продуктов относящихся к определенной категории необходимо в адресной строке сформировать запрос вида
-localhost:8080/products?category=name name указывается с учётом регистра.
+Для получения списка продуктов относящихся к определенной категории необходимо в адресной строке сформировать запрос вида 
+[localhost:8080/products?category=name](http://localhost:8080/products?category=name), name указывается с учётом регистра.
 
 Для поиска товаров название которых содержит некий текст необходимо в адресной строке отправить запрос вида
-localhost:8080/products?title=text, где text - часть названия искомого товара с учётом регистра
+[localhost:8080/products?title=text](http://localhost:8080/products?title=text), где text - часть названия искомого товара с учётом регистра
 
 Проверить возможность добавления, редактирования и удаления записей в базе данных можно воспользовавшись средствами разработчика
 в браузере: Ctrl+Shift+I либо F12 в Google Chrome. Для этого во вкладке Console необходимо сформировать и отправить запрос сходный с одним из следующих:
- 
-fetch('/products', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yandex', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))
+ * для операции добавления в таблицу  
+```fetch('/products', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yandex', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))```
 
-fetch('/products/3', {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yahoo', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))
+* для операции редактирования данных в таблице  
+```fetch('/products/3', {method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({title: 'Yahoo', description:'Lorem ipsum dolor si amet...'})}).then(result => console.log(result))```
 
-fetch('/products/2', {method:'DELETE'}).then(result => console.log(result))
+* для удаления продукта из таблицы  
+```fetch('/products/2', {method:'DELETE'}).then(result => console.log(result))```
