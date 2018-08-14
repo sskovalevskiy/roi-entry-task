@@ -18,7 +18,7 @@ CRUD операции над каталогом товаров, а также п
 Дамп базы данных для MySQL 5.7: [roi-entry-task\src\main\resources\database.sql](roi-entry-task\src\main\resources\database.sql)
 
 При использовании нестандартных логина/пароля для доступа к БД необходимо в файле ***application.properties***
-изменить значения полей ***spring.datasource.username=root***  ***spring.datasource.password=root*** на актуальные:
+изменить значения полей ***spring.datasource.username=root*** и ***spring.datasource.password=root*** на актуальные:
 
 
 ### Получение JSON от сервера
