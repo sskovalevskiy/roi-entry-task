@@ -15,10 +15,12 @@ CRUD операции над каталогом товаров, а также п
 Результат: исходный код приложения с инструкциями по развертыванию (можно ссылку на GitHub)
 
 ### Инструкция по развертыванию
-Дамп базы данных для MySQL 5.7: [roi-entry-task\src\main\resources\database.sql](roi-entry-task\src\main\resources\database.sql)
-
-При использовании нестандартных логина/пароля для доступа к БД необходимо в файле ***application.properties***
-изменить значения полей ***spring.datasource.username=root*** и ***spring.datasource.password=root*** на актуальные:
+  1.  Клонируем проект `git clone https://github.com/sskovalevskiy/roi-entry-task`
+  2.  Загружаем дамп базы данных для MySQL 5.7 из папки: [roi-entry-task\src\main\resources\database.sql](roi-entry-task\src\main\resources\database.sql)
+  3.  При использовании нестандартных логина/пароля для доступа к БД необходимо в файле ***application.properties***
+изменить значения полей ***spring.datasource.username=root*** и ***spring.datasource.password=root*** на актуальные.
+  4.  Переходим в корень проекта `cd roi-entry-task`
+  5.  Запускаем сервер `mvn spring-boot:run`
 
 
 ### Получение JSON от сервера
